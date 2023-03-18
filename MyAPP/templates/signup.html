@@ -1,0 +1,17 @@
+{% extends 'plantilla.html' %}  {% comment %} extends heredamos todo el contenido del archivo plantilla {% endcomment %}
+
+{% block content %} 
+<h1>Signup</h1>
+{{error}}
+{% comment %} Vamos a indicarle a donde vamos a enviar este formulario con el atributo action {% endcomment %}
+<form action="/signup/" method="post">
+{% csrf_token %}
+{{form.as_p}}
+
+<button>
+    Signup
+</button>
+
+</form>
+{% endblock  %} 
+

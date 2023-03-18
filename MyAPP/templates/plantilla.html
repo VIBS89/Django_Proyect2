@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Django Aplication</title>
+    </head> 
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href= "/">Home</a>
+                </li>
+                <li>
+                    <a href= "/tasks">Tasks</a>
+                </li>
+                {% comment %} Si el usuario esta Autenticado me va a mostrar este logout {% endcomment %}
+    {% if user.is_authenticated %}
+    <li>  
+        <a href= "/logout">Logout</a>
+    </li>  
+    {% else %} 
+    <li>  
+        <a href= "/signup">Signup</a>
+    </li> 
+    {% endif  %} 
+            </ul>
+        </nav>
+        {% block content %} 
+        {% endblock  %} 
+    </body>
+</html>
